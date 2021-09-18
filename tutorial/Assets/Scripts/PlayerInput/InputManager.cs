@@ -42,4 +42,5 @@ public class InputManager : MonoBehaviour
     private void OnJump() {
         PlayerJump.Invoke();
     }
+
 }
