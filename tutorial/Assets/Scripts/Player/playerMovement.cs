@@ -50,7 +50,10 @@ public class playerMovement : MonoBehaviour
         // playerRb.transform.position += moveSpeed * moveVector * Time.deltaTime;
 
         // Velocity Movement
-        playerRb.velocity += moveVector * moveSpeed;
+        if (PlatformManager.Instance.playerGrounded) {
+            playerRb.velocity += moveVector * moveSpeed;
+
+        }
     }
 
     private void Rotate() {
@@ -65,7 +68,7 @@ public class playerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (isGrounded)
+        if (PlatformManager.Instance.playerGrounded)
         {
             playerRb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
             this.SetGrounded(false);
