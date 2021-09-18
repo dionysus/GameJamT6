@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
     private Slider slider;
     private float targetProgress;
 
-    public float FillSpeed = 0.05f;
+    public float FillSpeed = 0.2f;
 
     private void Awake() {
         slider = gameObject.GetComponent<Slider>();
