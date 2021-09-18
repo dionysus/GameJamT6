@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
     private Slider slider;
     private float targetProgress;
 
-    public float FillSpeed = 0.1f;
+    public float FillSpeed = 0.05f;
 
     private void Awake() {
         slider = gameObject.GetComponent<Slider>();
@@ -17,6 +17,10 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         SetToProgress(1f);
+    }
+
+    void Update() {
+        SetToProgressAnimated(0);
     }
 
     public void IncreaseProgress(float progressIncrease) {
