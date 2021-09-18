@@ -42,7 +42,6 @@ public class playerMovement : MonoBehaviour
         
         Move();
         Rotate();
-        //Jump();
     }
 
     private void Move() {
@@ -68,7 +67,7 @@ public class playerMovement : MonoBehaviour
         if (isGrounded)
         {
             playerRb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
-            this.SetGrounded(false);
+            //this.SetGrounded(false);
         }
     }
 }
