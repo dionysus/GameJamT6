@@ -10,6 +10,7 @@ public class PlayerSpawner : MonoBehaviour
     private Transform playerTransform;
     private Rigidbody playerRb;
 
+    private HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
