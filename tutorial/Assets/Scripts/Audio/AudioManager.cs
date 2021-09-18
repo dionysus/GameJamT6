@@ -5,7 +5,6 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     private AudioSource effectsSource;
-    private AudioSource musicSource;
     private static AudioManager instance;
     public static AudioManager Instance { get { return instance; } }
 
@@ -16,7 +15,6 @@ public class AudioManager : MonoBehaviour
             instance = this;
         }
         effectsSource = gameObject.AddComponent<AudioSource>() as AudioSource; 
-        musicSource = gameObject.AddComponent<AudioSource>() as AudioSource;
     }
 
     public void PlayClip(AudioClip audioClip) {
@@ -31,4 +29,5 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
 }
