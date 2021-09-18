@@ -8,6 +8,8 @@ public class Platform : MonoBehaviour
     [SerializeField] public bool isHot = false;
     [SerializeField] public bool isCold = false;
 
+    private HealthBar healthbar;
+
     private void OnCollisionStay(Collision other) {
         isTouching = true;
     }
@@ -20,6 +22,7 @@ public class Platform : MonoBehaviour
         if (isHot) {
             Debug.Log("HOT PLATFORM!");
             PlayerAudio.Instance.PlayDamageAudio();
+            healthbar.DecreaseProgress(.1f);
             // DAMAGE CHARACTER
         }
 
