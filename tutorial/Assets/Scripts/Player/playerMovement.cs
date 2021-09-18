@@ -16,11 +16,13 @@ public class playerMovement : MonoBehaviour
     private Vector3 lookVector;
     private bool isGrounded = true;
 
+    private bool userJumped;
+
     void Awake() {
         InputManager.PlayerMove.AddListener(SetMoveVector);
         InputManager.PlayerLook.AddListener(SetLookVector);
         InputManager.PlayerJump.AddListener(Jump);
-
+        
         playerRb = GetComponent<Rigidbody>();
     }
 
@@ -40,6 +42,7 @@ public class playerMovement : MonoBehaviour
         
         Move();
         Rotate();
+        //Jump();
     }
 
     private void Move() {
@@ -56,11 +59,16 @@ public class playerMovement : MonoBehaviour
         playerRb.transform.rotation = Quaternion.Euler(playerRot);
     }
 
-    private void Jump() {
+    private void SetGrounded(bool setting){
+        this.isGrounded = setting;
+    }
 
-        if (isGrounded) {
+    private void Jump()
+    {
+        if (isGrounded)
+        {
             playerRb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
-            // isGrounded = false;
+            this.SetGrounded(false);
         }
     }
 }
