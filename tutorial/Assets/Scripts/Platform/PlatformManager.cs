@@ -6,7 +6,7 @@ public class PlatformManager : MonoBehaviour
 {
 
     [SerializeField] public Platform[] platforms;
-    [SerializeField] bool playerGrounded;
+    [SerializeField] public bool playerGrounded;
 
     private static PlatformManager instance;
     public static PlatformManager Instance { get { return instance; } }
