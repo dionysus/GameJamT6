@@ -65,16 +65,10 @@ public class playerMovement : MonoBehaviour
 
     private void Jump()
     {
-        //Debug.Log("Reached jump fn");
-        //Debug.Log(isGrounded);
-        //userJumped = I
-        //Debug.Log(userJumped);
-        
         if (isGrounded)
         {
-            Debug.Log("userJumped");
             playerRb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
-            //setGrounded(false);
+            this.SetGrounded(false);
         }
     }
 }
