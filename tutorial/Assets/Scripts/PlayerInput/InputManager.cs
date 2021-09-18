@@ -9,7 +9,9 @@ public class InputManager : MonoBehaviour
     // Events
     public static UnityEvent<Vector3> PlayerMove = new UnityEvent<Vector3>();
     public static UnityEvent<Vector2> PlayerLook = new UnityEvent<Vector2>();
+    
     public static UnityEvent PlayerJump = new UnityEvent();
+    public static UnityEvent PlayerFire = new UnityEvent();
 
     // Player Controls
     PlayerInput playerInput;
@@ -41,6 +43,10 @@ public class InputManager : MonoBehaviour
 
     private void OnJump() {
         PlayerJump.Invoke();
+    }
+
+    private void OnFire() {
+        PlayerFire.Invoke();
     }
 
 }
